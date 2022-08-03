@@ -1,0 +1,7 @@
+{
+  "name": "WolrdEventos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
