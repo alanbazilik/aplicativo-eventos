@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventosTable extends Migration
+class CreateEventosimagemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,10 @@ class CreateEventosTable extends Migration
      */
     public function up()
     {
-        Schema::create('eventos', function (Blueprint $table) {
+        Schema::create('eventosimagems', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->string('desquicao_evento');
-            $table->float('Valor', 10, 2);
-            $table->string('Local');
-            $table->date('Data');
-            $table->integer('quantidade');
+            
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -33,6 +27,6 @@ class CreateEventosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eventos');
+        Schema::dropIfExists('eventosimagems');
     }
 }

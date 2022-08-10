@@ -13,7 +13,8 @@ class Eventos extends Model
     "desquicao_evento",
     "Valor",
     "Local",
-    "Data"
+    "Data",
+    "quantidade"
 ];
 
 }
