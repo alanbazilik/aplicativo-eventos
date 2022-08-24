@@ -15,6 +15,22 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'eventos',
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
+  },
+  {
+    path: 'cadrastro-login',
+    loadChildren: () => import('./cadrastro-login/cadrastro-login.module').then( m => m.CadrastroLoginPageModule)
+  },
+  {
+    path: 'eventoslist',
+    loadChildren: () => import('./eventoslist/eventoslist.module').then( m => m.EventoslistPageModule)
+  },
 ];
 
 @NgModule({
