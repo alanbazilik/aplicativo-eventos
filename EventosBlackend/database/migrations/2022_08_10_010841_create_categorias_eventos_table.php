@@ -16,7 +16,8 @@ class CreateCategoriasEventosTable extends Migration
         Schema::create('categorias_eventos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo');
-            $table->foreign('evento')->references('id')->on('Name');
+            $table->unsignedBigInteger('evento_id');
+            $table->foreign('evento_id')->references('id')->on('eventos');
             $table->timestamps();
         });
     }

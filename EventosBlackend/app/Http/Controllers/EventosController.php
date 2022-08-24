@@ -22,10 +22,7 @@ class EventosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+ 
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +32,16 @@ class EventosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Eventos::create([
+            'Name' => $request->nome_eventos,
+            'desquicao_evento' => $request->desquicao_evento,
+            'Valor' => $request->Valor,
+            'Local' => $request->Local,
+            'Data' => $request->Data,
+            'quantidade' => $request->quantidade,
+            'image' => $request->image
+        
+        ]);
     }
 
     /**
@@ -44,33 +50,12 @@ class EventosController extends Controller
      * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
-    public function show(Eventos $eventos)
+    public function show(Request $request,Eventos $eventos)
     {
-        //
+        return $eventos;
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Eventos  $eventos
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Eventos $eventos)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Eventos  $eventos
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Eventos $eventos)
-    {
-        //
-    }
+ 
+   
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +65,6 @@ class EventosController extends Controller
      */
     public function destroy(Eventos $eventos)
     {
-        //
+        $eventos->delete();
     }
 }

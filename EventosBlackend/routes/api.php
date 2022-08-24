@@ -19,3 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::Get("Eventos","App\Http\Controllers\EventosController@index");
+Route::post("Eventos ","App\Http\Controllers\eventosController@index");
+Route::get("Eventos/{Eventos}","App\Http\Controllers\eventosController@show");
+Route::put("Eventos/{Eventos}","App\Http\Controllers\eventosController@update");
+Route::delete("Eventos/{Eventos}","App\Http\Controllers\eventosController@destroy");
