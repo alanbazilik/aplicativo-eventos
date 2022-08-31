@@ -1,9 +1,68 @@
 <ion-header>
   <ion-toolbar>
+    <div class="logohome">
     <ion-title>register</ion-title>
+  </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-icon name="person-outline"></ion-icon>
+    <ion-label>Nome</ion-label>
+    <ion-input placeholder=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="person-outline"></ion-icon>
+    <ion-label>Sobrenome</ion-label>
+    <ion-input placeholder=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="person-outline"></ion-icon>
+    <ion-label>Email</ion-label>
+    <ion-input placeholder=""></ion-input>
+  </ion-item>
+
+<ion-item>
+  <ion-icon name="key-outline"></ion-icon>
+  <ion-label>Senha</ion-label>
+  <ion-input placeholder="" type="password"></ion-input>
+</ion-item>
+
+
+<ion-item>
+  <ion-icon name="key-outline"></ion-icon>
+  <ion-label>Confirmar senha</ion-label>
+  <ion-input placeholder="" type="password"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-icon name="call-outline"></ion-icon>
+  <ion-label>Telefone</ion-label>
+  <ion-input placeholder="" type="number"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-icon name="home-outline"></ion-icon>
+  <ion-label>Endereço</ion-label>
+  <ion-input placeholder=""></ion-input>
+</ion-item>
+
+<ion-list>
+  <ion-item>
+    <ion-icon name="male-female-outline"></ion-icon>
+    <ion-select interface="action-sheet" placeholder="Sexo">
+      <ion-select-option value="Masculino">Masculino</ion-select-option>
+      <ion-select-option value="Feminino">Feminino</ion-select-option>
+      <ion-select-option value="Outros">Outros</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+
+
+<ion-button color="primary">Confirmar</ion-button>
 
 </ion-content>
