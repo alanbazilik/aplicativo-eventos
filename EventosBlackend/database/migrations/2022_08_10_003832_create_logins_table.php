@@ -17,7 +17,7 @@ class CreateLoginsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('sobrenome');
-            $table->integer('sexo');
+            $table->string('sexo');
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('telefone');
