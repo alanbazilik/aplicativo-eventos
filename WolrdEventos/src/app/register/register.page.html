@@ -10,51 +10,50 @@
   <ion-item>
     <ion-icon name="person-outline"></ion-icon>
     <ion-label>Nome</ion-label>
-    <ion-input placeholder=""></ion-input>
+    <ion-input [(ngModel)]="logins.name" placeholder="Seu nome"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-icon name="person-outline"></ion-icon>
     <ion-label>Sobrenome</ion-label>
-    <ion-input placeholder=""></ion-input>
+    <ion-input [(ngModel)]="logins.sobrenome" placeholder="Seu Sobrenome"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-icon name="person-outline"></ion-icon>
     <ion-label>Email</ion-label>
-    <ion-input placeholder=""></ion-input>
+    <ion-input [(ngModel)]="logins.email" placeholder=" Seu Email"></ion-input>
   </ion-item>
-
   
 <ion-item>
   <ion-icon name="call-outline"></ion-icon>
   <ion-label>Telefone</ion-label>
-  <ion-input placeholder="" type="number"></ion-input>
+  <ion-input [(ngModel)]="logins.telefone" placeholder="Seu telefone" type="number"></ion-input>
 </ion-item>
 
 <ion-item>
   <ion-icon name="person-outline"></ion-icon>
   <ion-label>CPF</ion-label>
-  <ion-input placeholder="" type="number"></ion-input>
+  <ion-input [(ngModel)]="logins.cpf" placeholder="Seu CPF" type="number"></ion-input>
 </ion-item>
 
 <ion-item>
   <ion-icon name="key-outline"></ion-icon>
   <ion-label>Senha</ion-label>
-  <ion-input placeholder="" type="password"></ion-input>
+  <ion-input [(ngModel)]="logins.password" placeholder="Sua Senha" type="password"></ion-input>
 </ion-item>
 
 
 <ion-item>
   <ion-icon name="home-outline"></ion-icon>
   <ion-label>Endereço</ion-label>
-  <ion-input placeholder=""></ion-input>
+  <ion-input  [(ngModel)]="logins.Endereco" placeholder=""></ion-input>
 </ion-item>
 
 <ion-list>
   <ion-item>
     <ion-icon name="male-female-outline"></ion-icon>
-    <ion-select interface="action-sheet" placeholder="Sexo">
+    <ion-select [(ngModel)]="logins.sexo" interface="action-sheet" placeholder="Sexo">
       <ion-select-option value="Masculino">Masculino</ion-select-option>
       <ion-select-option value="Feminino">Feminino</ion-select-option>
       <ion-select-option value="Outros">Outros</ion-select-option>
@@ -64,6 +63,6 @@
 
 
 
-<ion-button color="primary">Confirmar</ion-button>
+<ion-button (click)="registar()" color="primary">Confirmar</ion-button>
 
 </ion-content>

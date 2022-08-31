@@ -22,7 +22,7 @@ class CreateLoginsTable extends Migration
             $table->string('password');
             $table->integer('telefone');
             $table->string('Endereco');
-            $table->integer('cpf');
+            $table->string('cpf');
             // $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -8,12 +8,18 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  email: string;
-  senha: string;
-  constructor(public toastController: ToastController, private route: Router) { }
 
+  constructor(public toastController: ToastController, private route: Router) { }
+  logins = {
+    email: '',
+    senha: ''
+  };
+  logins_crad:any = []
   ngOnInit() {
   }
+
+  
+
   login(){
     if(this.email && this.senha){
       this.route.navigateByUrl('/home');

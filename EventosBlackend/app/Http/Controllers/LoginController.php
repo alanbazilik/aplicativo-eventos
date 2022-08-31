@@ -24,7 +24,7 @@ class LoginController extends Controller
      */
     public function create(Request $request)
     {
-        return $logins::all();
+        // return $logins::all();
     }
 
     /**
@@ -33,7 +33,7 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, logins $logins)
+    public function store(Request $request)
     {
         return login::create([
             'name' => $request->name,
