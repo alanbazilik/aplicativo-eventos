@@ -23,3 +23,10 @@ Route::post("Eventos ","App\Http\Controllers\eventosController@index");
 Route::get("Eventos/{Eventos}","App\Http\Controllers\eventosController@show");
 Route::put("Eventos/{Eventos}","App\Http\Controllers\eventosController@update");
 Route::delete("Eventos/{Eventos}","App\Http\Controllers\eventosController@destroy");
+
+Route::Get("Logins","App\Http\Controllers\LoginController@index");
+Route::post("Logins","App\Http\Controllers\LoginController@index");
+Route::get("Logins/{Logins}","App\Http\Controllers\LoginController@show");
+Route::put("Logins/{Logins}","App\Http\Controllers\LoginController@update");
+Route::delete("Logins/{Logins}","App\Http\Controllers\LoginController@destroy");
+

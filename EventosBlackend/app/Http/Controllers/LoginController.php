@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\login;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -14,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return login::all();
     }
 
     /**
@@ -22,9 +22,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return $logins::all();
     }
 
     /**
@@ -33,9 +33,18 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, logins $logins)
     {
-        //
+        return login::create([
+            'name' => $request->name,
+            'sobrenome' => $request->sobrenome,
+            'sexo' => $request->sexo,
+            'email' => $request->email,
+            'password' => $request->password,
+            'telefone' => $request->telefone,
+            'Endereco' => $request->Endereco,
+            'cpf' =>$request->cpf 
+        ]);
     }
 
     /**
@@ -44,9 +53,9 @@ class LoginController extends Controller
      * @param  \App\Models\login  $login
      * @return \Illuminate\Http\Response
      */
-    public function show(login $login)
+    public function show(Request $request,login $login)
     {
-        //
+        return $logins;
     }
 
     /**
@@ -57,7 +66,16 @@ class LoginController extends Controller
      */
     public function edit(login $login)
     {
-        //
+        return login::edit([
+            'name' => $request->name,
+            'sobrenome' => $request->sobrenome,
+            'sexo' => $request->sexo,
+            'email' => $request->email,
+            'password' => $request->password,
+            'telefone' => $request->telefone,
+            'Endereco' => $request->Endereco,
+            'cpf' =>$request->cpf 
+        ]);
     }
 
     /**
@@ -69,7 +87,16 @@ class LoginController extends Controller
      */
     public function update(Request $request, login $login)
     {
-        //
+        return login::update([
+            'name' => $request->name,
+            'sobrenome' => $request->sobrenome,
+            'sexo' => $request->sexo,
+            'email' => $request->email,
+            'password' => $request->password,
+            'telefone' => $request->telefone,
+            'Endereco' => $request->Endereco,
+            'cpf' =>$request->cpf 
+        ]);
     }
 
     /**
@@ -80,6 +107,6 @@ class LoginController extends Controller
      */
     public function destroy(login $login)
     {
-        //
+       $logins->delete(); 
     }
 }

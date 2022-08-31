@@ -39,8 +39,8 @@ class EventosController extends Controller
             'Local' => $request->Local,
             'Data' => $request->Data,
             'quantidade' => $request->quantidade,
-            'image' => $request->image
-        
+            'image' => $request->image,
+            'Curtir' =>$request->curtir 
         ]);
     }
 

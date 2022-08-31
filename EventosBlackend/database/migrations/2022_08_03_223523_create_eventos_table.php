@@ -22,6 +22,7 @@ class CreateEventosTable extends Migration
             $table->date('Data');
             $table->integer('quantidade');
             $table->longText('image');
+            $table->integer('Curtir');
             $table->timestamps();
             $table->softDeletes();
         });
