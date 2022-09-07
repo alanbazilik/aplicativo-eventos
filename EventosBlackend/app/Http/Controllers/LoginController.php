@@ -109,4 +109,21 @@ class LoginController extends Controller
     {
        $logins->delete(); 
     }
+    public function login(Request $request)
+    {
+        // return login::create([
+        //     'name' => $request->name,
+        //     'sobrenome' => $request->sobrenome,
+        //     'sexo' => $request->sexo,
+        //     'email' => $request->email,
+        //     'password' => $request->password,
+        //     'telefone' => $request->telefone,
+        //     'Endereco' => $request->Endereco,
+        //     'cpf' =>$request->cpf 
+        // ]);
+        $user = User::firstWhere('email',&)
+        if(){
+
+        }else{}
+    }
 }
