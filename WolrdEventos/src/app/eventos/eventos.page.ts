@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eventos.page.scss'],
 })
 export class EventosPage implements OnInit {
+  Eventos = {
 
+  }
+  Eventos_crad:any = []
   constructor() { }
 
   ngOnInit() {

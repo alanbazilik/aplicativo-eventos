@@ -20,20 +20,20 @@ export class LoginPage implements OnInit {
 
   
 
-  login(){
-    if(this.email && this.senha){
-      this.route.navigateByUrl('/home');
-      this.presentToast('Seja Bem Vindo!', 'success');
-    }else{
-      this.presentToast('Erro, Usuário  ou Senha Inválidos!', 'danger');
-    }
-  }
+  // login(){
+  //   if(this.email  && this.senha){
+  //     this.route.navigateByUrl('/home');
+  //     this.presentToast('Seja Bem Vindo!', 'success');
+  //   }else{
+  //     this.presentToast('Erro, Usuário  ou Senha Inválidos!', 'danger');
+  //   }
+  // }
 
-  async presentToast(texto: string, color: string){
-      const toast = await this.toastController.create({
-        message: ''+texto,
-        duration: 2000
-      });
-      toast.present();
-    }
+  // async presentToast(texto: string, color: string){
+  //     const toast = await this.toastController.create({
+  //       message: ''+texto,
+  //       duration: 2000
+  //     });
+  //     toast.present();
+  //   }
 }
