@@ -14,5 +14,8 @@ export class AuthenticationServiceService {
       return this.http.post(`${this.urlApi}/Logins`,Logins);
   
     }
+    logar(logins){
+      return this.http.post(`${this.urlApi}/Login`,logins);
+    }
 
 }

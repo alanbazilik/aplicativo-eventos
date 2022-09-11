@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\login;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -55,7 +57,7 @@ class LoginController extends Controller
      */
     public function show(Request $request,login $login)
     {
-        return $logins;
+        return $login;
     }
 
     /**
@@ -64,7 +66,7 @@ class LoginController extends Controller
      * @param  \App\Models\login  $login
      * @return \Illuminate\Http\Response
      */
-    public function edit(login $login)
+    public function edit(Request $request, login $login)
     {
         return login::edit([
             'name' => $request->name,
@@ -107,23 +109,31 @@ class LoginController extends Controller
      */
     public function destroy(login $login)
     {
-       $logins->delete(); 
+       $login->delete(); 
     }
-    public function login(Request $request)
-    {
-        // return login::create([
-        //     'name' => $request->name,
-        //     'sobrenome' => $request->sobrenome,
-        //     'sexo' => $request->sexo,
-        //     'email' => $request->email,
-        //     'password' => $request->password,
-        //     'telefone' => $request->telefone,
-        //     'Endereco' => $request->Endereco,
-        //     'cpf' =>$request->cpf 
-        // ]);
-        $user = User::firstWhere('email',&)
-        if(){
+    public function stores(Request $request){
 
-        }else{}
+        $user = User::firstWhere('email', $request['email']);
+        if (!$user) {
+            return response()->json(['message' => 'E-mail e/ou Senha incorretos.'], 404);
+        }
+
+        if (!password_verify($request['password'], $user['password'])) {
+            return response()->json([
+                'message' => 'E-mail e/ou Senha incorretos.'
+            ], 401);
+        }
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token       = $tokenResult->token;
+        
+        $token->save();
+        return response()->json([
+            'access_token' => $tokenResult->accessToken,
+            'token_type'   => 'Bearer',
+            'expires_at'   => Carbon::parse(
+                $tokenResult->token->expires_at
+            )->toDateTimeString()
+        ]); 
     }
+   
 }

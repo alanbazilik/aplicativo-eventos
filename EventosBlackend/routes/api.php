@@ -30,4 +30,4 @@ Route::get("Logins/{Logins}","App\Http\Controllers\LoginController@show");
 Route::put("Logins/{Logins}","App\Http\Controllers\LoginController@update");
 Route::delete("Logins/{Logins}","App\Http\Controllers\LoginController@destroy");
 
-Route::post("Login","App\Http\Controllers\LoginController@store");
+Route::post("Login","App\Http\Controllers\LoginController@stores");
