@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
 
   login(){
     if(this.logins.email  && this.logins.senha){
-      this.loginservice.savelogins(this.logins).subscribe(res => {
+      this.loginservice.logar(this.logins).subscribe(res => {
         this.route.navigateByUrl('/home');
         this.presentToast('Seja Bem Vindo!', 'success');
       

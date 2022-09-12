@@ -112,28 +112,26 @@ class LoginController extends Controller
        $login->delete(); 
     }
     public function stores(Request $request){
-
-        $user = User::firstWhere('email', $request['email']);
-        if (!$user) {
-            return response()->json(['message' => 'E-mail e/ou Senha incorretos.'], 404);
+        
+        $logins = login::firstWhere('email', $request['email']);
+        if (!$logins) {
+            return response()->json(['message' => 'E-mail incorretos.'], 404);
         }
 
-        if (!password_verify($request['password'], $user['password'])) {
+        if (!($request['senha']== $logins['password'])) {
             return response()->json([
                 'message' => 'E-mail e/ou Senha incorretos.'
             ], 401);
+        }else{
+            return response()->json([
+                'message' => 'E-mail e/ou Senha correto.'
+            ], 200);
         }
-        $tokenResult = $user->createToken('Personal Access Token');
-        $token       = $tokenResult->token;
+       
+       
         
-        $token->save();
-        return response()->json([
-            'access_token' => $tokenResult->accessToken,
-            'token_type'   => 'Bearer',
-            'expires_at'   => Carbon::parse(
-                $tokenResult->token->expires_at
-            )->toDateTimeString()
-        ]); 
+       
+        
     }
    
 }
