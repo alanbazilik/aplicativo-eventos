@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
+import { EventosService } from '../api/eventos.service';
 
 @Component({
   selector: 'app-eventos',
@@ -7,12 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosPage implements OnInit {
   Eventos = {
-
+    Name:'',
+    desquicao_evento:'',
+    Valor:'',
+    Local:'',
+    Data:'',
+    quantidade:'',
+    image:'',
+    Curtir:''
   }
   Eventos_crad:any = []
-  constructor() { }
+  constructor(public toastController: ToastController, private route: Router, private EventosService:EventosService,public alertController: AlertController) { }
 
   ngOnInit() {
   }
+  async presentAlertMultipleButtons() {
+    const alert = await this.alertController.create({
+      message: "Evento cadastrado",
+    });
 
+    await alert.present();
+  }
+  EventosCrads(){
+    this.EventosService.saveEventos(this.Eventos).subscribe(res => {
+      this.presentAlertMultipleButtons()
+      
+    })
+  }
 }
