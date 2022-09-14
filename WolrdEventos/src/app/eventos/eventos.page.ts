@@ -19,6 +19,8 @@ export class EventosPage implements OnInit {
     image:'',
     Curtir:''
   }
+  imagemBase64String: any = [];
+  image: any = [];
   Eventos_crad:any = []
   constructor(public toastController: ToastController, private route: Router, private EventosService:EventosService,public alertController: AlertController) { }
 
@@ -36,5 +38,20 @@ export class EventosPage implements OnInit {
       this.presentAlertMultipleButtons()
       
     })
+  }
+  onUploadImage(evt: any) {
+    const file = evt.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = this.handleReaderLoadedReceita.bind(this);
+      reader.readAsBinaryString(file);
+    }
+  }
+  handleReaderLoadedReceita(e: any) {
+    this.imagemBase64String = 'data:image/png;base64,' + btoa(e.target.result);
+    console.log(this.imagemBase64String)
+    this.Eventos.image = this.imagemBase64String;
+
+    
   }
 }
