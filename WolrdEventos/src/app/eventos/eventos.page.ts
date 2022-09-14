@@ -10,14 +10,14 @@ import { EventosService } from '../api/eventos.service';
 })
 export class EventosPage implements OnInit {
   Eventos = {
-    Name:'',
+    nome_eventos:'',
     desquicao_evento:'',
     Valor:'',
     Local:'',
     Data:'',
     quantidade:'',
     image:'',
-    Curtir:''
+    status:true
   }
   imagemBase64String: any = [];
   image: any = [];

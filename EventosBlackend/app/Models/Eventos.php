@@ -14,7 +14,10 @@ class Eventos extends Model
     "Valor",
     "Local",
     "Data",
-    "quantidade"
+    "image",
+    "Curtir",
+    "quantidade",
+    "status"
 ];
 
 }

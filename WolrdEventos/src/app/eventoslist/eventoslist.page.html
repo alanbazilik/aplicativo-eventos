@@ -10,42 +10,45 @@
  
 
      
-
-      <ion-item>
-        <ion-label position="floating">Nome do Evento:</ion-label>
-        <ion-label></ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Descrição do Evento:</ion-label>
-        <ion-label></ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Valor:</ion-label>
-        <ion-label></ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Local do Evento:</ion-label>
-        <ion-label></ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Dia do Evento:</ion-label>
-        <ion-label></ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Quantidade de Pessoa:</ion-label>
-        <ion-label></ion-label>
-
-
-      <!-- </ion-item>
-      <ion-card-subtitle>Os verdadeiros sei quem são</ion-card-subtitle>
-      <ion-card-title>Festa de Pijama</ion-card-title> -->
-
+  <div *ngFor="let item of eventos">
+    <ion-item>
+      <ion-label>Nome do Evento:</ion-label>
+      <ion-label>{{item.Name}}</ion-label>
     </ion-item>
     <ion-item>
-      <img src="" alt="" srcset="">
-      <ion-button (click)="eventoslist()">
-        <ion-icon name="heart-outline"></ion-icon>Curtida
-      </ion-button>
+      <ion-label>Descrição do Evento:</ion-label>
+      <ion-label>{{item.desquicao_evento}}</ion-label>
     </ion-item>
+    <ion-item>
+      <ion-label>Valor:</ion-label>
+      <ion-label>{{item.Valor}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Local do Evento:</ion-label>
+      <ion-label>{{item.Local}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dia do Evento:</ion-label>
+      <ion-label>{{item.Data}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quantidade de Pessoa:</ion-label>
+      <ion-label>{{item.quantidade}}</ion-label>
+
+
+    <!-- </ion-item>
+    <ion-card-subtitle>Os verdadeiros sei quem são</ion-card-subtitle>
+    <ion-card-title>Festa de Pijama</ion-card-title> -->
+    <ion-item>
+      <img src="{{item.image}}" alt="" srcset="">
+     
+    </ion-item>
+    <ion-button (click)="EventosCrads()">
+      <ion-icon name="heart-outline"></ion-icon>Curtida
+    </ion-button>
+  </ion-item>
+  </div>
+  
+      
    
 </ion-content>

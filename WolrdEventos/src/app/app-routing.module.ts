@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'eventoslist',
     loadChildren: () => import('./eventoslist/eventoslist.module').then( m => m.EventoslistPageModule)
   },
+  {
+    path: 'cancelarevento',
+    loadChildren: () => import('./cancelarevento/cancelarevento.module').then( m => m.CancelareventoPageModule)
+  },
 ];
 
 @NgModule({

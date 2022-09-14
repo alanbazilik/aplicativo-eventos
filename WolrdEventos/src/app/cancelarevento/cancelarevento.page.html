@@ -1,8 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <div class="logohome">
-    <ion-title>Eventos</ion-title>
-  </div>
+    <ion-title>Cancelarevento</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -49,14 +47,7 @@
       <ion-input type="file" name="imagem" class="form-control" (change)="onUploadImage($event)" accept=".png, .jpg, .jpeg, .pdf"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-checkbox slot="start" [indeterminate]="true"[(ngModel)]="Eventos.status"></ion-checkbox>
-      <ion-label>Status do Evento</ion-label>
-    </ion-item>
-
     <img src="{{imagemBase64String}}" alt="">
 
-<ion-button routerLink="/cancelarevento" color="danger">Cancelar</ion-button>
 <ion-button  (click)="EventosCrads()" color="success">Confirmar</ion-button>
-   
 </ion-content>

@@ -19,10 +19,10 @@ class CreateEventosTable extends Migration
             $table->string('desquicao_evento');
             $table->float('Valor', 10, 2);
             $table->string('Local');
-            $table->date('Data');
+            $table->string('Data');
             $table->integer('quantidade');
             $table->longText('image');
-            $table->integer('Curtir');
+            $table->boolean('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

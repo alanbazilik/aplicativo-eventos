@@ -19,10 +19,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::Get("Eventos","App\Http\Controllers\EventosController@index");
-Route::post("Eventos ","App\Http\Controllers\eventosController@index");
-Route::get("Eventos/{Eventos}","App\Http\Controllers\eventosController@show");
-Route::put("Eventos/{Eventos}","App\Http\Controllers\eventosController@update");
-Route::delete("Eventos/{Eventos}","App\Http\Controllers\eventosController@destroy");
+Route::post("Eventos ","App\Http\Controllers\EventosController@store");
+Route::get("Eventos/{Eventos}","App\Http\Controllers\EventosController@show");
+Route::put("Eventos/{Eventos}","App\Http\Controllers\EventosController@update");
+Route::delete("Eventos/{Eventos}","App\Http\Controllers\EventosController@destroy");
+
+Route::Get("Eventosimagens","App\Http\Controllers\EventosimagemsController@index");
+Route::post("Eventosimagens ","App\Http\Controllers\EventosimagemsController@store");
+Route::get("Eventosimagens/{Eventosimagens}","App\Http\Controllers\EventosimagemsController@show");
+Route::put("Eventosimagens/{Eventosimagens}","App\Http\Controllers\EventosimagemsController@update");
+Route::delete("Eventosimagens/{Eventosimagens}","App\Http\Controllers\EventosimagemsController@destroy");
+
 
 Route::Get("Logins","App\Http\Controllers\LoginController@index");
 Route::post("Logins","App\Http\Controllers\LoginController@store");
