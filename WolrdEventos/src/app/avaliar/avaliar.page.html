@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>avaliar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>1 Pessimo</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>2 medio</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>3 mais menos</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>4 bom</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>5 otimo</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-label>avaliação com Estrelas </ion-label>
+    <ion-button (click)="avaliar(1)"><ion-icon name="star"></ion-icon>1</ion-button>
+    <ion-button  (click)="avaliar(2)"><ion-icon name="star"></ion-icon>2</ion-button>
+    <ion-button  (click)="avaliar(3)"><ion-icon name="star"></ion-icon>3</ion-button>
+    <ion-button  (click)="avaliar(4)"><ion-icon name="star"></ion-icon>4</ion-button>
+    <ion-button  (click)="avaliar(5)"><ion-icon name="star"></ion-icon>5</ion-button>
+    <div class="messagem de Avaliação">
+      <ion-label>
+       Nome:
+    <ion-input [(ngModel)]="Avaliar.nome"></ion-input></ion-label>
+     
+        <textarea [(ngModel)]="Avaliar.messagem" name="messagem" id="" cols="30" rows="5"></textarea>
+      </div>
+      <ion-button color="primary" (click)="salvar()">Cradastrar</ion-button>
+      <br> 
+
+ 
+</ion-content>

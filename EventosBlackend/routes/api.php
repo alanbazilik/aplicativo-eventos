@@ -24,12 +24,8 @@ Route::get("Eventos/{Eventos}","App\Http\Controllers\EventosController@show");
 Route::put("Eventos/{Eventos}","App\Http\Controllers\EventosController@update");
 Route::delete("Eventos/{Eventos}","App\Http\Controllers\EventosController@destroy");
 
-Route::Get("Eventosimagens","App\Http\Controllers\EventosimagemsController@index");
-Route::post("Eventosimagens ","App\Http\Controllers\EventosimagemsController@store");
-Route::get("Eventosimagens/{Eventosimagens}","App\Http\Controllers\EventosimagemsController@show");
-Route::put("Eventosimagens/{Eventosimagens}","App\Http\Controllers\EventosimagemsController@update");
-Route::delete("Eventosimagens/{Eventosimagens}","App\Http\Controllers\EventosimagemsController@destroy");
-
+Route::get('Avaliar', ['App\Http\Controllers\AvaliarController', 'index']);
+Route::post('avaliar', ['App\Http\Controllers\AvaliarController', 'store']);
 
 Route::Get("Logins","App\Http\Controllers\LoginController@index");
 Route::post("Logins","App\Http\Controllers\LoginController@store");
