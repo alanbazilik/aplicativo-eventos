@@ -14,7 +14,7 @@ class EventosimagemsController extends Controller
      */
     public function index()
     {
-        return Eventosimagems::all();
+        
     }
 
     /**
@@ -32,10 +32,7 @@ class EventosimagemsController extends Controller
      */
     public function store(Request $request)
     {
-        return Eventosimagems::create([
-            'Curtir' =>$request->Curtir
-            
-        ]);
+  
     }
 
     /**
@@ -46,7 +43,7 @@ class EventosimagemsController extends Controller
      */
     public function show(Eventosimagems $eventosimagems)
     {
-        return $eventosimagems;
+     ;
     }
 
     /**
@@ -80,7 +77,7 @@ class EventosimagemsController extends Controller
      */
     public function destroy(Eventosimagems $eventosimagems)
     {
-        $eventosimagems->delete();
+       
     }
 //     public function newEvent(Request $request){
 //         $parametre =$request->all();

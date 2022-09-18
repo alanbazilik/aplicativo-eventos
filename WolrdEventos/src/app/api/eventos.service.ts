@@ -16,7 +16,5 @@ export class EventosService {
       return this.http.post(`${this.urlApi}/Eventos`,Eventos);
   
     }
-    saveEventoscradcurtir(Eventosimagens){
-      return this.http.post(`${this.urlApi}/Eventosimagens`,Eventosimagens);
-      }
+
 }

@@ -40,7 +40,6 @@ class EventosController extends Controller
             'Data' => $request->Data,
             'quantidade' => $request->quantidade,
             'image' => $request->image,
-            'Curtir' =>$request->Curtir,
             'status' =>$request->status
         ]);
     }

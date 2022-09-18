@@ -15,7 +15,6 @@ class Eventos extends Model
     "Local",
     "Data",
     "image",
-    "Curtir",
     "quantidade",
     "status"
 ];

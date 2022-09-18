@@ -15,7 +15,7 @@ class CreateEventosimagemsTable extends Migration
     {
         Schema::create('eventosimagems', function (Blueprint $table) {
             $table->id();
-            $table->integer('Curtir');
+          
             $table->timestamps();
         });
     }

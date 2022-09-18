@@ -9,7 +9,7 @@ class Eventosimagems extends Model
 {
     use HasFactory;
     protected $fillable = [
-    "Curtir"
+   
 
 ];
 }

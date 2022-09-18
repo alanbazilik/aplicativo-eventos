@@ -9,10 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./eventoslist.page.scss'],
 })
 export class EventoslistPage implements OnInit {
-  Eventos = {
-    Curtir:''
-  
-  }
+
   eventos: any = [];
   imagemBase64String: any = [];
   image: any = [];
@@ -22,13 +19,8 @@ export class EventoslistPage implements OnInit {
   ngOnInit() {
     this.list()
   }
-   curtir = 1;
-  EventosCrads(item){
-    this.EventosService.saveEventoscradcurtir(item).subscribe(res => {
-      this.curtir+this.Eventos.Curtir
-      
-    })
-  }
+ 
+
   list(){
     this.EventosService.getEventos().subscribe(res => {
       this.eventos = res
